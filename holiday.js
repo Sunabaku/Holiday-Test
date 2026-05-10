@@ -6,8 +6,6 @@ async function GetHoliday(targetDate) {
         const res = await fetch(HOLIDAY_LIST_URL);
         const holidayData = await res.json();
 
-        // const now = new Date();
-
         const holidays = Object.keys(holidayData)
             .map(dstr => ({
                 name: holidayData[dstr],
@@ -16,12 +14,14 @@ async function GetHoliday(targetDate) {
             .filter(holiday => holiday.date - targetDate > 0)
             .sort((a, b) => a.date - b.date);
 
-        console.log(holidays);
+        //console.log(holidays);
         return holidays[0];
     }
 
     catch (error) {
         console.error("取得失敗");
+        document.getElementById("errorScreen").classList.remove("hidden");
+        document.getElementById("gameScreen").classList.add("hidden");
     }
 }
 
@@ -59,7 +59,7 @@ async function main() {
     let date = GetRandomDate();
     let ansHoliday = await GetHoliday(date);
 
-    console.log(ansHoliday);
+    //console.log(ansHoliday);
 
     const ansInput = document.getElementById("ansInput")
     const ansSubmitButton = document.querySelector("#ansSubmitButton");
