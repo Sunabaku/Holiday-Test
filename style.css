@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+
+    background-color: #f0f4f8;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.button,
+#ansInput {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.textBox {
+    border: 2px dotted #333;
+    padding: 20px;
+    margin: 10px;
+    width: fit-content;
+    background-color: #fff;
+}
+
+.finalResults {
+    font-size: large;
+}
+
+.finalRank{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.gamingLight {
+
+    background: linear-gradient(to right,
+            #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+    animation: gamingAnime 1s linear infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    display: inline-block;
+}
+
+@keyframes gamingAnime {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}

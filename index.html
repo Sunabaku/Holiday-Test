@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>祝日力計測</title>
+</head>
+
+<body>
+    <div id="startScreen">
+        <h1 id="title">祝日力計測</h1>
+        <div class="textBox">
+            <p>あなたの祝日の感覚がどれだけ鋭いかを計測します。</p>
+            <p>誤差がスコアとして加算されます。そのため、スコアが低いほど祝日の感覚が鋭いことになります。</p>
+        </div>
+        <button type="button" id="startButton" class="button">計測を始める</button>
+    </div>
+    <div id="gameScreen" class="hidden">
+        <h2>第<span id="questionNum"></span>問/全5問中</h2>
+        <p><span id="formatDate"></span>以降で最も近い祝日は<br></p>
+        <label for="ansInput"></label>
+        <input type="number" id="ansInput" name="ansInput" value="">
+        日後<br>
+
+        <button type="button" id="ansSubmitButton" class="button">提出</button>
+        <button type="button" id="nextButton" class="hidden button">次の問題へ</button>
+
+        <div id="diffResult" class="hidden">
+            <p>最も近い祝日 : <span id="holidayResult"></span></p>
+            <p>誤差 : <span id="result"></span></p>
+        </div>
+    </div>
+
+    <div id="resultScreen" class="hidden">
+        <h2>結果</h2>
+        <p class="finalResults">あなたのスコア : <span id="finalScore">0</span>点</p>
+        <p class="finalResults">あなたのランク : <span id="finalRank" class="finalRank"></span></p>
+        <p class="textBox" id="finalRankExplanation"><!-- ここにランク説明 --></p>
+        <button type="button" id="retryButton" class="button">もう一回遊ぶ</button>
+    </div>
+
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="holiday.js"></script>
+</body>
+
+</html>
