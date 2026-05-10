@@ -74,6 +74,17 @@ async function main() {
 
     ansSubmitButton.addEventListener("click", () => { //提出時処理
         userAns = Number(ansInput.value);
+        if(userAns<0){
+            ansInput.value=0;
+            userAns=0;
+            return;
+        }
+        else if(userAns>999){
+            ansInput.value=999;
+            userAns=999; 
+            return;
+        }
+
         const userAnsDate = new Date(date);
         userAnsDate.setDate(userAnsDate.getDate() + userAns);
         console.log(userAnsDate);
